@@ -14,5 +14,16 @@ Bucket.prototype.getAllData = function(){
         .catch(console.error);
 }
 
+Bucket.prototype.bindEvents = function(){
+    PubSub.subscribe('FormView:activity-submitted', (event)=>{
+        //console.log(event);
+        this.request.post(event.detail)
+        .then((activities)=>{
+            PubSub.publish('Bucket:all-data-loaded', activities);
+        })
+        .catch(console.error);
+    });
+}
+
 
 module.exports = Bucket;    

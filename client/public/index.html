@@ -7,6 +7,29 @@
     <script src="/js/bundle.js"></script>
 </head>
 <body>
+                  <h2>Add an activity</h2>
+                  <form id="sightings-form">
+                    
+                      <label for="name">Name:</label>
+                      <input type="text" id="name"/>
+
+                      <label for="location">Location:</label>
+                      <input type="text" id="location"/>
+
+
+                    <fieldset id="done">
+                        <legend> Done?</legend>
+                      <input type="radio" id="true" name="done" value="true"/>
+                      <label for="true">Yes</label>
+
+                      <input type="radio" id="false" name="done" value="false"/>
+                      <label for="false">No</label>
+                    </fieldset>
+          
+                    <input type="submit" value="Save" id="save"/>
+                  </form>
+                
+
     <div id = "all-activities-container"></div>
     
 </body>
