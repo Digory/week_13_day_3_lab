@@ -9,9 +9,12 @@ ActivityView.prototype.render = function(activity){
     const name = this.createHeading(activity.name);
     container.appendChild(name);
 
+    const location = this.createDetail(activity.location);
+    container.appendChild(location);
 
-
-
+    const determineContentOfDone = this.determineDone(activity.done);
+    const doneContainer = this.createDetail(determineContentOfDone);
+    container.appendChild(doneContainer);
 
 
 
@@ -23,6 +26,21 @@ ActivityView.prototype.createHeading = function(textContent){
     heading.textContent = textContent;
     return heading;
 }
+
+ActivityView.prototype.createDetail = function(textContent){
+    const detail = document.createElement('p');
+    detail.textContent = textContent;
+    return detail;
+}
+
+ActivityView.prototype.determineDone = function(stringBoolean){
+    if(stringBoolean === "true"){
+        return "You have done this, mate.";
+    }
+        return "You haven't done this, mate.";
+}
+
+
 
 module.exports = ActivityView;
 
