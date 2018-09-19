@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const bucket = new Bucket();
     bucket.getAllData();
 
-    const listView = new ListView();
+    const allActivitiesContainer = document.querySelector('#all-activities-container');
+    const listView = new ListView(allActivitiesContainer);
     listView.bindEvents();
+
 
 });
